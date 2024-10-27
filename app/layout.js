@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Head from "next/head";
+import Link from "next/link";
 
 export const gilroy = localFont({
   src: [
@@ -15,12 +17,63 @@ export const gilroy = localFont({
 
 export const metadata = {
   title: "Pehla Kadham",
+  copyright: "Copyright © 2024 · All Rights Reserved",
+  title: {
+    template: '%s | Pehla Kadham',
+    default: "Pehla Kadham",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pehla Kadham",
+    url: "https://pehlakadham.org.in",
+    site: "@PehlaKadham",
+    creator: "@PehlaKadham",
+    images: [
+      "https://pehlakadham.org.in/favicon.ico",
+      "https://pehlakadham.org.in/PehlaKadham.png",
+      "https://pehlakadham.org.in/Sangyatra.png",
+      "https://pehlakadham.org.in/Verra.png",
+      "https://pehlakadham.org.in/android-chrome-192x192.png",
+      "https://pehlakadham.org.in/android-chrome-512x512.png",
+      "https://pehlakadham.org.in/apple-touch-icon.png",
+      "https://pehlakadham.org.in/apple-touch-icon-precomposed.png",
+      "https://pehlakadham.org.in/favicon-16x16.png",
+      "https://pehlakadham.org.in/favicon-32x32.png",
+    ]
+  },
+  openGraph: {
+    title: "Pehla Kadham",
+    url: "https://pehlakadham.org.in",
+    site: "@PehlaKadham",
+    creator: "@PehlaKadham",
+    images: [
+      "https://pehlakadham.org.in/favicon.ico",
+      "https://pehlakadham.org.in/PehlaKadham.png",
+      "https://pehlakadham.org.in/Sangyatra.png",
+      "https://pehlakadham.org.in/Verra.png",
+      "https://pehlakadham.org.in/android-chrome-192x192.png",
+      "https://pehlakadham.org.in/android-chrome-512x512.png",
+      "https://pehlakadham.org.in/apple-touch-icon.png",
+      "https://pehlakadham.org.in/apple-touch-icon-precomposed.png",
+      "https://pehlakadham.org.in/favicon-16x16.png",
+      "https://pehlakadham.org.in/favicon-32x32.png",
+    ],
+    siteName: "Pehla Kadham",
+    locale: "en_US",
+    type: "website",
+  }
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       <body className={`${gilroy.variable} font-Gilroy`}>
+      <Head>
+        <Link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <Link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <Link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <Link rel="manifest" href="/site.webmanifest" />
+      </Head>
+      <body className={`${gilroy.variable} font-Gilroy`}>
         {children}
       </body>
     </html>
